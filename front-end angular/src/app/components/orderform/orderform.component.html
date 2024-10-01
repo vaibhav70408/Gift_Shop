@@ -1,0 +1,62 @@
+<form [formGroup]="orderDetailsForm" class="d-flex gap-3 flex-column" (ngSubmit)="onPlaceOrder()">
+    <input type="text" formControlName="orderName" placeholder="Enter your name" pInputText />
+    @if (orderDetailsForm.get('orderName')?.hasError('required') && orderDetailsForm.controls['orderName'].touched) {<small class="text-danger">Name is required</small>}
+    @if (orderDetailsForm.get('orderName')?.hasError('maxlength') && orderDetailsForm.controls['orderName'].touched) {<small class="text-danger">Order name cannot exceed 50 characters </small>}
+
+    <input type="email" formControlName="orderEmail" placeholder="Enter your email" pInputText />
+    @if (orderDetailsForm.get('orderEmail')?.hasError('required') && orderDetailsForm.controls['orderEmail'].touched) {<small class="text-danger">Email is required</small>}
+    @if (orderDetailsForm.get('orderEmail')?.hasError('email') && orderDetailsForm.controls['orderEmail'].touched) {<small class="text-danger">Email is invalid</small>}
+    @if (orderDetailsForm.get('orderEmail')?.hasError('maxlength') && orderDetailsForm.controls['orderEmail'].touched) {<small class="text-danger">Email name cannot exceed 50 characters </small>}
+
+    <p-inputNumber mode="decimal" [min]="1000000000" [max]="9999999999" [format]="false" formControlName="orderPhone" placeholder="Enter your phone number" />
+    @if (orderDetailsForm.controls['orderPhone'].invalid && orderDetailsForm.controls['orderPhone'].touched) {<small class="text-danger">Number is required</small>}
+
+    <!-- <p-calendar [showIcon]="true" class="w-100" formControlName="orderDate" placeholder="Enter order date" />
+    @if (orderDetailsForm.controls['orderDate'].invalid && orderDetailsForm.controls['orderDate'].touched) {<small class="text-danger">Date is required</small>} -->
+    
+    <!-- <textarea class="textarea" rows="3" cols="30" formControlName="orderDescription" placeholder="Enter order description" pInputTextarea></textarea>
+    @if (orderDetailsForm.get('orderDescription')?.hasError('required') && orderDetailsForm.get('orderDescription')?.touched) {<small class="text-danger">Order description is required</small>}
+    @if (orderDetailsForm.get('orderDescription')?.hasError('maxlength') && orderDetailsForm.get('orderDescription')?.touched) {<small class="text-danger">Order description cannot exceed 255 charectors</small>} -->
+
+    <textarea class="textarea" rows="5" cols="30" formControlName="orderAddress" placeholder="Enter your address" pInputTextarea></textarea>
+    @if (orderDetailsForm.get('orderAddress')?.hasError('required') && orderDetailsForm.get('orderAddress')?.touched) {<small class="text-danger">Order Address is required</small>}
+    @if (orderDetailsForm.get('orderAddress')?.hasError('maxlength') && orderDetailsForm.get('orderAddress')?.touched) {<small class="text-danger">Order Address cannot exceed 255 charectors</small>}
+
+    <div class="mt-3 w-100 order-details-container">
+        <h5 class="blueThemeColor fs-5 fw-medium">Selected Items Details:</h5>
+        <div class="mt-3 d-flex flex-column gap-2">
+            <div class="d-flex flex-column gap-2">
+                <label for="selectedGiftName" class="fw-medium fs-6">Selected Gift:</label>
+                <input pInputText id="selectedGiftName" [value]="giftModel.giftName" readonly />
+            </div>
+            <div class="d-flex flex-column gap-2">
+                <label for="selectedGiftPrice" class="fw-medium fs-6">Selected Gift Price:</label>
+                <p-inputNumber id="selectedGiftPrice" [(ngModel)]="giftModel.giftPrice" [ngModelOptions]="{standalone: true}" mode="currency" currency="INR" currencyDisplay="code" locale="en-IN" [readonly]="true"/>
+            </div>
+            <div class="d-flex flex-column gap-2">
+                <label for="selectedGiftPrice" class="fw-medium fs-6">Selected Themes:</label>
+                <p-table [value]="themeModel" class="border">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th id="name" pSortableColumn="name" style="width:20%">Name <p-sortIcon field="name"></p-sortIcon></th>
+                            <th id="price" pSortableColumn="price" style="width:20%">Price <p-sortIcon field="price"></p-sortIcon></th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-theme>
+                        <tr>
+                            <td>{{theme.themeName}}</td>
+                            <td>{{theme.themePrice}}</td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </div>
+            <h5 class="blueThemeColor mt-3 fs-5 fw-medium">Total order price:</h5>
+            <div class="d-flex flex-column gap-2">
+                <label for="orderPrice" class="fw-medium fs-6">Order Price:</label>
+                <p-inputNumber id="orderPrice" formControlName="orderPrice"  mode="currency" currency="INR" currencyDisplay="code" locale="en-IN" [readonly]="true"/>
+            </div>
+        </div>
+    </div>
+
+    <p-button label="Place order" type="submit" [disabled]="orderDetailsForm.invalid" class="text-center rounded"></p-button>
+</form>

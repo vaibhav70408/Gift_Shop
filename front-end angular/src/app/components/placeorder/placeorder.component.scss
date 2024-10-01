@@ -1,0 +1,16 @@
+.container {
+    border: 1px solid #d1d5db;
+    border-radius: 9px;
+    overflow: auto;
+}
+
+.blueThemeColor {
+    color: rgba(13, 110, 253, 1);
+}
+
+.previous-button {
+    position: fixed;
+    bottom: 15px;
+    left: 15px;
+    cursor: pointer;
+}

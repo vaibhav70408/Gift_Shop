@@ -1,0 +1,34 @@
+<div class="registerContainer">
+  <div class="inputsContainer">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="h5 mb-3 text-start">Login</div>
+      <span *ngIf="userService.loginStatus" class="status-style">Invalid Login Credentials</span>
+      <div class="field">
+        <input
+          type="text"
+          pInputText
+          pTooltip="Please fill out this field"
+          tooltipPosition="bottom"
+          placeholder="Enter Email"
+          formControlName="email"
+        />
+      </div>
+      <div class="field">
+        <input
+          type="text"
+          pInputText
+          pTooltip="Please fill out this field"
+          tooltipPosition="bottom"
+          placeholder="Enter Password"
+          formControlName="password"
+        />
+      </div>
+      <div class="loginFooter">
+        <p-button label="Login" (onClick)="onSubmit()"></p-button>
+        <label class="LoginLink"
+          >New User ? <a routerLink="signup"> Register</a></label
+        >
+      </div>
+    </form>
+  </div>
+</div>

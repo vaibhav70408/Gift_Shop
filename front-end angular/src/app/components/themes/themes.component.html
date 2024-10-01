@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="grid-container">
+        <div class="grid-item" *ngFor="let item of finaldata">
+            <p-card [style]="{ width: '360px' }">
+                <div class="card-header">
+                    <h2>{{item.themeName}}</h2>
+                </div>
+                <div class="card-price">
+                    ₹ {{item.themePrice}}
+                </div>
+                <div class="card-description">
+                    <p>
+                        {{item.themeDetails}}
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <p-checkbox [binary]="true"
+                        (onChange)="onCheckboxChange($event, item)"
+                        inputId="binary"></p-checkbox>
+                </div>
+            </p-card>
+        </div>
+    </div>
+    <p-button class="previous-button" (onClick)="redirectToGifts()"
+        severity="help" icon="pi pi-arrow-left"
+        [rounded]="true"></p-button>
+    <p-button class="next-button" (onClick)="redirectToMyOrders()"
+        severity="help" icon="pi pi-arrow-right"
+        [rounded]="true"></p-button>
+</div>

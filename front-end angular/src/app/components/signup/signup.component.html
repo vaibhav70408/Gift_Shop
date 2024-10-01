@@ -1,0 +1,79 @@
+ <div class="registerContainer">
+    <div class="inputsContainer">
+      <form [formGroup]="registerForm">
+        <div class="h5 mb-3 text-start">Create your account</div>
+  
+        <div class="field">
+          <input type="text"
+          pInputText
+          placeholder="Enter Email"
+          formControlName="email"
+        />
+          <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched">
+            <div *ngIf="registerForm.get('email')?.hasError('required')"class="error">Email is required</div>
+            <div *ngIf="registerForm.get('email')?.hasError('emailFormat')"class="error">Invalid email format</div>
+          </div>
+        </div>
+  
+        <div class="field">
+          <input type="text"
+          pInputText
+          placeholder="Enter Username"
+          formControlName="userName"
+        />
+          <div *ngIf="registerForm.get('userName')?.invalid && registerForm.get('userName')?.touched">
+            <div *ngIf="registerForm.get('userName')?.hasError('userNameRequired')"class="error">Username is required</div>
+            <div *ngIf="registerForm.get('userName')?.hasError('userNameLength')"class="error">Username must be between 5 and 20 characters long</div>
+            <div *ngIf="registerForm.get('userName')?.hasError('userNameFormat')"class="error">Username must contain at least one digit and one letter</div>
+          </div>
+        </div>
+  
+        <div class="field">
+          <input type="text"
+          pInputText
+          placeholder="Enter Mobile Number"
+          formControlName="mobileNumber"
+        />
+          <div *ngIf="registerForm.get('mobileNumber')?.invalid && registerForm.get('mobileNumber')?.touched">
+            <div *ngIf="registerForm.get('mobileNumber')?.hasError('mobileNumberRequired')" class="error">Mobile Number is required</div>
+            <div *ngIf="registerForm.get('mobileNumber')?.hasError('mobileNumberFormat')" class="error">Enter a valid mobile number</div>
+          </div>
+        </div>
+  
+        <div class="field">
+            <input type="text"
+            pInputText
+            placeholder="Enter Password"
+            formControlName="password"
+          />
+          <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched">
+            <div *ngIf="registerForm.get('password')?.hasError('passwordRequired')" class="error">Password is required</div>
+            <div *ngIf="registerForm.get('password')?.hasError('passwordLength')" class="error">Password must be at least 8 characters long</div>
+            <div *ngIf="registerForm.get('password')?.hasError('passwordFormat')" class="error">Password needs mixed-case letters, digits, and special characters</div>
+          </div>
+        </div>
+  
+        <div class="field">
+            <input type="text"
+            pInputText
+            placeholder="Confirm Password"
+            formControlName="confirmPassword"
+          />
+          <div *ngIf="registerForm.hasError('passwordMismatch') && registerForm.get('confirmPassword')?.touched">
+            Password and Confirm Password must be the same
+          </div>
+        </div>
+  
+        <div class="signupFooter">
+            <p-button label="Sign up" (onClick)="onSubmit()"></p-button>
+        <label class="signinLink">Already a user? <a routerLink="/login">Login</a></label>
+          </div>
+
+          <div *ngIf="registrationSuccess" class="alert success">
+            User successfully registered ! Login Above
+          </div>
+          
+      </form>
+    </div>
+  </div>
+  

@@ -1,0 +1,98 @@
+.registerContainer {
+  width: 100%;
+  background-color: #1f1f1f;
+  min-width: 50rem;
+  min-height: 100vh;
+  background-image: url('../../../assets/background.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  backdrop-filter: blur(30px);
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.inputsContainer {
+  min-height: 25rem;
+  display: flex;
+  margin-right: 5%;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px white;
+  padding: 1.5rem;
+  background-color: white;
+  width: 30%;
+  overflow-y: hidden;
+}
+
+.formInput {
+  padding: 10px;
+  width: 25rem;
+  border: 2px solid black;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.p-inputtext {
+  width: 20rem;
+}
+
+.loginFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.h5 {
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.submitButton {
+  margin-left: 0;
+  width: 130px;
+  color: black;
+  background-color: blue;
+}
+
+.LoginLink {
+  margin-right: 0;
+  font-weight: bold;
+  color: black;
+}
+
+.field {
+  margin-bottom: 1.5rem;
+}
+
+.LoginLink a {
+  color: #007bff;
+  text-decoration: underline;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+button {
+  background-color: #007bff;
+}
+
+.status-style {
+  background-color: azure;
+  color: rgb(230, 40, 40);
+  border: 1px solid red;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 8px;
+  margin: 8px;
+  line-height: 2px;
+}

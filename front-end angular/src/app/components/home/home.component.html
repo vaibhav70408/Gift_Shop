@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="gift-container">
+    <div class="gift-card" *ngFor="let gift of gifts">
+      <p-card [style]="{ width: '360px' }">
+        <div class="header">
+          <img alt="Card" [src]="gift.giftImageUrl" class="gift-image" />
+        </div>
+        <div class="body">
+          <p class="gift-name">{{ gift.giftName }}</p>
+          <p class="gift-price">Price: {{ gift.giftPrice }}</p>
+          <p class="gift-details">Details: {{ gift.giftDetails }}</p>
+        </div>
+        <ng-template pTemplate="footer">
+          <p-button (onClick)="buyGift(gift)" class="buy-button">Buy</p-button>
+        </ng-template>
+      </p-card>
+    </div>
+  </div>
+  
+  <p-button (onClick)="redirectToGifts()"
+    class="next-button"
+    severity="help"
+    icon="pi pi-arrow-right"
+    [rounded]="true"
+  ></p-button>
+</div>
