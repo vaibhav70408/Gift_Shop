@@ -1,0 +1,100 @@
+.container {
+  padding: 20px;
+}
+
+.themeContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  flex-direction: row;
+}
+
+.themeCard {
+  flex: 0 0 calc(33.33% - 20px);
+  margin-bottom: 20px;
+  min-width: 250px;
+}
+
+.card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-out;
+  height: 100%;
+  background-color: linen;
+  background-color: linen;
+  border-radius: 4px;
+}
+.cardText {
+  font-weight: bolder;
+  margin: 10px;
+  text-align: justify;
+  flex-grow: 1;
+  font-weight: 600;
+  font-weight: 600;
+}
+
+.cardBody {
+  height: 200px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.cardTitle {
+  font-size: 28px;
+  font-weight: bolder;
+  margin-top: 10px;
+  text-align: center;
+  background-color: #1ca9c9;
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+  background-color: #1ca9c9;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+.buttonContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.buttons {
+  position: relative;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-around;
+}
+.deleteButton,
+.editButton {
+  margin: 0 5px;
+}
+
+.searchContainer {
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+  height: 60px;
+  flex-wrap: nowrap;
+  position: relative;
+}
+.searchForm {
+  display: flex;
+  align-items: baseline;
+  position: relative;
+}
+.searchInput {
+  height: 38px;
+  min-width: 730px;
+  margin-right: 70px;
+  margin-right: 70px;
+  margin-left: 95px;
+  border-radius: 4px;
+  position: relative;
+}
+.addThemeButton {
+  height: 2.7rem;
+  min-width: 7.2rem;
+}

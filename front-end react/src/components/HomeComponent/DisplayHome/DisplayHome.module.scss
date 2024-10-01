@@ -1,0 +1,19 @@
+.cardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; 
+  margin: 0 auto; 
+  max-width: 1200px; 
+}
+
+.cardContainer > * {
+  
+ flex-basis: calc(28.33% - (50px * 2 / 3));
+  margin-bottom: 20px; 
+  margin: 0 auto;
+  justify-content: space-around;
+}
+.notAvailable {
+  color:white;
+  font-weight: bolder;
+}

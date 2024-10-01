@@ -1,0 +1,87 @@
+.createThemeForm {
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+
+  h2 {
+    margin-bottom: 20px;
+  }
+  
+  button.btn-success {
+    padding: 10px 20px;
+    background-color: #28a745; 
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  button.btn-success:hover {
+    background-color: #218838; 
+  }
+}
+
+  .formGroup {
+    margin-bottom: 20px;
+
+    .formLabel {
+      display: block;
+      font-weight: bold;
+      color: #080404f5; 
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+  }
+
+  button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #0056b3;
+    }
+  }
+
+  .confirmationButtons {
+    display: flex;
+
+    button {
+      margin-right: 10px;
+    }
+  }
+
+  .successMessage {
+    color: green; 
+    margin-bottom: 10px; 
+  }
+
+  .deleteConfirmation {
+    p {
+      margin-bottom: 10px;
+    }
+
+    .confirmationButtons {
+      display: flex;
+      justify-content: center;
+
+      button {
+        margin-right: 10px;
+      }
+    }
+  }
+
+.confirmationButton {
+  margin-right: 10px; 
+}
